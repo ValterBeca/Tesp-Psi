@@ -18,6 +18,10 @@ return [
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-backend',
+            // Sem isto, um POST/PUT com Content-Type: application/json chega vazio ao Yii
+            'parsers' => [
+                'application/json' => 'yii\web\JsonParser',
+            ],
         ],
         'user' => [
             'identityClass' => \common\models\User::class,
@@ -45,8 +49,11 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                ['class' => 'yii\rest\UrlRule',
-                    'controller' => 'api/prato'
+                'class' => 'yii\rest\UrlRule',
+                'controller' => 'api/prato',
+                'extraPatterns' => [
+                    'GET count' => 'count', // GET api/pratos/count  ->  actionCount()
+                    ],
                 ],
             ],
         ],
