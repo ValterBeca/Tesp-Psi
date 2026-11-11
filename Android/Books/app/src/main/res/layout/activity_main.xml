@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LinearLayout vertical: os elementos ficam uns por baixo dos outros, a começar no TOPO -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <!-- id "main": usado no onCreate para tratar as margens do sistema (edge-to-edge) -->
+    <!-- gravity center_horizontal: centra os filhos na horizontal -->
+    <!-- sem padding: os botões vão de uma ponta à outra do ecrã, como na imagem da ficha -->
+
+    <!-- Espaço vazio no topo (peso 2) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2" />
+    <!-- height 0dp + weight: a altura é uma fatia do espaço que sobra no ecrã -->
+
+    <!-- 1ª TextView: "Bem-Vindo!" a cor-de-rosa e a negrito -->
+    <TextView
+        android:id="@+id/tvBemVindo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/bem_vindo"
+        android:textColor="@color/rosa"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- 2ª TextView: email recebido da LoginActivity (o texto é posto no Java) -->
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp" />
+    <!-- darker_gray: cinzento que já vem com o Android -->
+
+    <!-- Espaço entre os textos e os botões (peso 3) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3" />
+
+    <!-- Botão Livro Estático: onClick tem de ter o MESMO nome do método na MainActivity -->
+    <Button
+        android:id="@+id/btnLivroEstatico"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:onClick="onClickLivroEstatico"
+        android:text="@string/btn_livro_estatico" />
+
+    <!-- Botão Livro Dinâmico -->
+    <Button
+        android:id="@+id/btnLivroDinamico"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="4dp"
+        android:onClick="onClickLivroDinamico"
+        android:text="@string/btn_livro_dinamico" />
+
+    <!-- Botão Enviar Email -->
+    <Button
+        android:id="@+id/btnEnviarEmail"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="4dp"
+        android:onClick="onClickEnviarEmail"
+        android:text="@string/btn_enviar_email" />
+
+    <!-- Espaço vazio no fundo (peso 3) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3" />
+    <!-- os 3 espaços dividem o que sobra na proporção 2 : 3 : 3 -->
+
+</LinearLayout>

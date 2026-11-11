@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Guess a Number</string>
+    <string name="txt_adivinha">Adivinha</string>
+    <string name="txt_btn_adivinha">Adivinha</string>
+
+    <string name="txt_acertou">Acertou!</string>
+    <string name="txt_acima">O valor está mais acima!</string>
+    <string name="txt_abaixo">O valor está mais abaixo!</string>
+    <string name="txt_tentativas">Número de tentativas: </string>
+    <string name="txt_excedeu">Excedeu o número de tentativas</string>
+</resources>

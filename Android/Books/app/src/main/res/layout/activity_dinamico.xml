@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LinearLayout HORIZONTAL: capa à esquerda, dados à direita -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:orientation="horizontal"
+    android:padding="16dp"
+    tools:context=".DinamicoActivity">
+    <!-- layout_marginTop ?attr/actionBarSize: empurra o conteúdo para baixo da ActionBar (senão fica tapado) -->
+
+    <!-- Capa do livro -->
+    <ImageView
+        android:id="@+id/ivCapa"
+        android:layout_width="110dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/desc_capa"
+        android:scaleType="fitCenter"
+        android:src="@drawable/programarandroid2" />
+    <!-- tamanho fixo em dp para todas as capas ficarem iguais -->
+
+    <!-- Coluna com os dados do livro -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+        <!-- marginStart: espaço entre a imagem e o texto -->
+
+        <!-- Linha: Título -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_titulo"
+                android:textStyle="bold" />
+            <!-- etiqueta fixa, não precisa de id -->
+            <TextView
+                android:id="@+id/tvTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp" />
+            <!-- valor: preenchido no código, por isso tem id -->
+        </LinearLayout>
+
+        <!-- Linha: Série -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_serie"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvSerie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+        <!-- Linha: Autor -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_autor"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvAutor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+        <!-- Linha: Ano -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/lbl_ano"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvAno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>
