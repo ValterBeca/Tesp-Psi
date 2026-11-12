@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LinearLayout vertical: capa em cima, campos editáveis por baixo -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".DetalhesLivroActivity">
+    <!-- id "main": usado no onCreate (EdgeToEdge) -->
+    <!-- layout_marginTop ?attr/actionBarSize: igual à Ficha 3, para a ActionBar não tapar a capa -->
+
+    <!-- Capa do livro -->
+    <ImageView
+        android:id="@+id/ivCapa"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center_horizontal"
+        android:contentDescription="@string/desc_capa"
+        android:scaleType="fitCenter" />
+
+    <!-- 8.1 Campos editáveis: EditText em vez de TextView -->
+    <EditText
+        android:id="@+id/etTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/hint_titulo"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etSerie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_serie"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/etAutor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_autor"
+        android:inputType="textPersonName" />
+
+    <!-- 8.1 Ano: inputType number = o teclado só mostra números -->
+    <EditText
+        android:id="@+id/etAno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_ano"
+        android:inputType="number" />
+
+</LinearLayout>

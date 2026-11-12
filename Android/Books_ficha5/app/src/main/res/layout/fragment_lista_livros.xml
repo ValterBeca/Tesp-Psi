@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 4.1 O layout do fragmento é só a RecyclerView: ela é que desenha as linhas todas -->
+<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rvLivros"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListaLivrosFragment"
+    tools:listitem="@layout/item_lista_livro" />
+    <!-- tools:listitem: só para o editor mostrar linhas de exemplo (não muda nada na app) -->

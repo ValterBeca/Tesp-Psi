@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 2.1 tools:showIn: no editor, o menu aparece desenhado dentro de um NavigationView -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <!-- 2. Grupo com os 2 livros: checkableBehavior single = só um item marcado de cada vez -->
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navLista"
+            android:icon="@drawable/ic_action_estatico"
+            android:title="@string/nav_lista"/>
+        <item
+            android:id="@+id/navGrelha"
+            android:icon="@drawable/ic_action_dinamico"
+            android:title="@string/nav_grelha" />
+    </group>
+
+    <!-- Fora do grupo: o email não abre um fragmento -->
+    <item
+        android:id="@+id/navEmail"
+        android:icon="@drawable/ic_action_email"
+        android:title="@string/nav_email" />
+</menu>

@@ -24,11 +24,11 @@ public class SingletonGestorLivros {
         gerarDadosDinamicos();                          // enche a lista com livros de exemplo
     }
 
-    // Simulação de dados (mais tarde virão de uma API/base de dados)
-    //private void gerarDadosDinamicos() {
+    //  Simulação de dados (mais tarde virão de uma API/base de dados)
+    private void gerarDadosDinamicos() {
 
-        //livros.add(new Livro(2, "Programar em Android AMSI", "Android Saga", "Equipa AMSI", 2019, R.drawable.programarandroid1)); // livro 2
-    //}
+        livros.add(new Livro(2, "Programar em Android AMSI", "Android Saga", "Equipa AMSI", 2019, R.drawable.programarandroid2)); // livro 2
+    }
 
     // 6.3 Devolve os livros da lista
     public ArrayList<Livro> getLivros() {

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LinearLayout vertical: os elementos ficam uns por baixo dos outros -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".LoginActivity">
+    <!-- id "main": usado no onCreate para tratar as margens do sistema (edge-to-edge) -->
+    <!-- match_parent: ocupa o ecrã tod-o; padding: margem interior de 16dp -->
+
+    <!-- 2.1 Imagem do ULO -->
+    <ImageView
+        android:id="@+id/ivLogo"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:contentDescription="@string/desc_logo"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo_ulo" />
+    <!-- height 0dp + weight 1: a imagem ocupa tod-o o espaço que sobra, empurrando os campos para baixo -->
+    <!-- contentDescription: texto lido pelo leitor de ecrã (acessibilidade) -->
+    <!-- scaleType fitCenter: a imagem é redimensionada sem se deformar -->
+    <!-- src: a imagem que copiámos para res/drawable (sem a extensão .jpg) -->
+
+    <!-- 2.2 Campo do email -->
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="emailAddress"
+        android:hint="@string/hint_email"
+        android:inputType="textEmailAddress"
+        android:text="@string/teste_email" />
+    <!-- text: SÓ PARA TESTES, o email já aparece escrito (apagar antes de entregar) -->
+    <!-- hint: texto cinzento que aparece quando o campo está vazio -->
+    <!-- inputType textEmailAddress: o teclado mostra o @ -->
+
+    <!-- 2.2 Campo da password -->
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autofillHints="password"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        android:text="@string/teste_password" />
+    <!-- text: SÓ PARA TESTES, a password já aparece escrita (apagar antes de entregar) -->
+    <!-- inputType textPassword: os caracteres aparecem como pontos -->
+
+    <!-- 2.2 e 2.5 Botão de Login -->
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="onClickLogin"
+        android:text="@string/btn_login" />
+    <!-- onClick: nome do métod-o Java chamado quando se clica no botão (tem de existir na LoginActivity) -->
+
+</LinearLayout>

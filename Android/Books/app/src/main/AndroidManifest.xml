@@ -20,8 +20,7 @@
             android:exported="false"
             android:label="@string/titulo_dinamico"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/Theme.Books.WithActionBar"
-            android:windowSoftInputMode="adjustPan"/>
+            android:theme="@style/Theme.Books.WithActionBar"/>
 
         <!-- Livro Estático: igual -->
         <activity

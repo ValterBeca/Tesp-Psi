@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>         <!-- já vem no projeto -->
+    <color name="white">#FFFFFFFF</color>         <!-- já vem no projeto -->
+    <color name="colorPrimary">#FF6750A4</color>  <!-- roxo: cor da ActionBar (usada no tema WithActionBar) -->
+</resources>

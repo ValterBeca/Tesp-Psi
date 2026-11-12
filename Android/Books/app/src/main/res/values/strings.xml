@@ -8,7 +8,6 @@
     <string name="hint_email">Email</string>
     <string name="hint_password">Password</string>
     <string name="btn_login">Login</string>
-    <string name="msg_login_sucesso">Login efetuado com sucesso</string>
     <string name="msg_email_invalido">Email inválido</string>
     <string name="msg_password_invalida">A password deve ter pelo menos 4 caracteres</string>
 

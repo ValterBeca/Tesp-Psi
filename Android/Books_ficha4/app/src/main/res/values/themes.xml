@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tema base da app (já existe): SEM ActionBar -->
+    <style name="Base.Theme.Books" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+    </style>
+
+    <!-- Tema global aplicado a toda a app (já existe) -->
+    <style name="Theme.Books" parent="Base.Theme.Books" />
+</resources>

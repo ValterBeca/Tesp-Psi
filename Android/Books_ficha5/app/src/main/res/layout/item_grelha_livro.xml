@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 9.2 Cada célula da grelha mostra SÓ a capa -->
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ivCapa"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:padding="4dp"
+    android:contentDescription="@string/desc_capa"
+    android:scaleType="centerCrop" />
+    <!-- width match_parent: ocupa a largura da coluna; centerCrop: preenche sem deformar (corta as pontas) -->

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Nome da app -->
+    <string name="app_name">Books</string>
+
+    <!-- Login -->
+    <string name="desc_logo">Logótipo da Universidade Leiria Oeste</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="msg_email_invalido">Email inválido</string>
+    <string name="msg_password_invalida">A password deve ter pelo menos 4 caracteres</string>
+
+
+    <!-- Títulos da ActionBar -->
+    <string name="titulo_estatico">Livro Estático</string>
+    <string name="titulo_dinamico">Livro Dinâmico</string>
+
+    <!-- Etiquetas do livro -->
+    <string name="desc_capa">Capa do livro</string>
+    <string name="lbl_titulo">Título:</string>
+    <string name="lbl_serie">Série:</string>
+    <string name="lbl_autor">Autor:</string>
+    <string name="lbl_ano">Ano:</string>
+
+    <!-- Dados do livro estático (passo 4.4) -->
+    <string name="livro_titulo">Programar em Android AMSI</string>
+    <string name="livro_serie">Android Saga</string>
+    <string name="livro_autor">Equipa AMSI</string>
+    <string name="livro_ano">2019</string>
+
+    <!-- Email (passo 9) -->
+    <string name="email_assunto">Books - AMSI</string>
+    <string name="email_texto">Olá! Este email foi enviado a partir da app Books.</string>
+    <string name="msg_sem_email">Não existe nenhuma aplicação de email instalada</string>
+
+    <!-- SÓ PARA TESTES: login já preenchido (ver activity_login.xml) -->
+    <string name="teste_email">catia.ledesma@ipleiria.pt</string>
+    <string name="teste_password">1234</string>
+    <!-- TOD-O: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Menu de navegação (Ficha 4) -->
+    <string name="nav_email">Enviar Email</string>
+    <string name="menu_abrir">Abrir menu</string>
+    <string name="menu_fechar">Fechar menu</string>
+</resources>
