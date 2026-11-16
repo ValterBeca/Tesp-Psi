@@ -1,0 +1,116 @@
+                                DEPARTAMENTO DE ENGENHARIA INFORMÁTICA
+
+     TESP EM PROGRAMAÇÃO DE SISTEMAS DE INFORMAÇÃO
+
+          Plataformas de Sistemas de Informação
+
+                    Ficha Prática Nº3
+
+Objetivos:
+    · Introdução à extensão Gii
+    · Reconhecer diferentes tipos de geradores de código
+    · Exercícios de geração e adaptação de código
+    · Compreender o conceito de migração e versionamento da base de dados
+    · Criar, aplicar e reverter migrações através da consola da framework Yii2
+
+1. Verifique se a extensão Gii se encontra instalada.
+2. Aceda à GUI do Gii via:
+
+              http://localhost/basic/web/index.php?r=gii
+
+3. Analise e explique para que serve cada um dos 6 geradores básicos fornecidos: Model
+    Generator, CRUD Generator, Controller Generator, Form Generator, Module
+    Generator e Extension Generator.
+
+4. Na ficha anterior a tabela country foi criada manualmente, através de um cliente de
+    gestão de bases de dados. Neste exercício a tabela será criada através de uma
+    migração, isto é, através de código versionável.
+    Antes de prosseguir, leia atentamente todas as alíneas do presente exercício.
+Documentação de apoio:
+
+https://www.yiiframework.com/doc/guide/2.0/en/db-migrations
+
+a) Elimine a tabela country criada na ficha anterior (DROP TABLE country).
+
+b) O comando de migração é executado pela aplicação de consola e não pela
+    aplicação web. Em que ficheiro de configuração procura a aplicação de consola a
+    ligação à base de dados? Justifique por que razão o comando de migração pode
+    falhar ainda que a aplicação web esteja a funcionar corretamente.
+
+c) Crie uma migração destinada à criação da tabela country, executando na diretoria
+    raiz do projeto:
+
+    php yii migrate/create create_country_table
+
+    Indique em que diretoria foi criado o ficheiro e qual o critério utilizado na
+    atribuição do seu nome. Que importância tem esse critério?
+
+d) Implemente os métodos safeUp() e safeDown() da migração criada na
+    alínea anterior, de modo a criar a tabela country com os campos id, code, name e
+    population. O campo id deverá ser a chave primária e de preenchimento
+    automático.
+
+e) Qual a diferença entre os métodos up()/down() e
+    safeUp()/safeDown()?
+
+f) Aplique a migração através do comando php yii migrate e confirme, no cliente de
+    gestão de bases de dados, que a tabela foi criada com a estrutura pretendida.
+
+g) Para além da tabela country, que outra tabela foi criada na base de dados? Qual a
+    sua finalidade e que informação armazena?
+h) Crie e aplique uma segunda migração, destinada ao carregamento de dados na
+    tabela country (mínimo de 10 registos), recorrendo ao método
+    batchInsert().
+
+i) Indique de que forma deverá ser implementado o método safeDown() desta
+    migração e explique por que razão não pode ser idêntico ao da migração da alínea
+    d).
+
+j) Crie e aplique uma terceira migração que altere o esquema já existente, devendo:
+           i. criar a tabela continent (id, name) e carregá-la com dados;
+          ii. acrescentar à tabela country o campo continent_id;
+
+          iii. criar a respetiva chave estrangeira entre as duas tabelas.
+
+k) Justifique a ordem pela qual as operações são efetuadas no método safeUp() e
+    ordem pela qual são revertidas no método safeDown().
+
+l) Execute os comandos seguintes e descreva o efeito de cada um, verificando o
+    estado database de dados após cada execução:
+
+    · php yii migrate/history
+    · php yii migrate/down 1
+    · php yii migrate/redo
+    · php yii migrate
+
+m) Enumere três vantagens da utilização de migrações relativamente à criação
+    manual do esquema da base de dados.
+5. Exercício prático scaffolding Gii:
+                  i. Gerar um modelo activerecord para a tabela country.
+                 ii. Gerar o controlador com todos os métodos CRUD para country e
+                      respetivas vistas.
+
+             Seguir os passos em:
+
+                http://www.yiiframework.com/doc-2.0/guide-start-gii.html
+
+6. Crie as opções de menu necessárias à funcionalidade desenvolvida em 5.
+
+7. Indique e classifique (modelo, controlador e vista) os elementos gerados no exercício
+    5:
+    Analise o modelo ActiveRecord gerado para a tabela country. Para além dos atributos
+    correspondentes às colunas, que método adicional foi gerado em consequência da
+    chave estrangeira? Explique a sua finalidade e indique de que forma é utilizado nas
+    vistas geradas.
+
+8. Esboce um diagrama do ciclo de vida dos elementos MVC por cada route existente
+    referente aos elementos gerados em 5.
+
+9. Altere o widget (exercício 5.ii), volte a gerar apenas a vista de index e analise o código
+    resultante.
+
+10. Reescreva a vista de index country e respetivo controlador/método:
+         a. No action handler realize a pesquisa de todos os modelos (country).
+                  i. http://www.yiiframework.com/doc-2.0/guide-db-active-record.html
+         b. Reimplemente a vista à mão recorrendo a um ciclo foreach (country).
+

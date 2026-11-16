@@ -49,15 +49,31 @@ return [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'class' => 'yii\rest\UrlRule',
-                'controller' => 'api/prato',
-                'extraPatterns' => [
-                    'GET count' => 'count', // GET api/pratos/count  ->  actionCount()
+                ['class' => 'yii\rest\UrlRule', 'controller' => 'api/user'],
+                    [
+                        'class' => 'yii\rest\UrlRule',
+                        'controller' => 'api/prato',
+                        'extraPatterns' => [
+                        'GET count' => 'count', // GET api/pratos/count  ->  actionCount()
+                        'GET nomes' => 'nomes', // 'nomes' é 'actionNomes'
+                        'GET {id}/preco' => 'preco',  //preco é 'actionPreco'
+                        'GET preco/{nomeprato}' => 'precopornome', // 'precopornome' é 'actionPrecoNome'
+                        'DELETE {nomeprato}' => 'delpornome', //'delpornome' é 'actionDelpornome '
+                        'GET {ano}/{mes}/{dia}' => 'pordata',
+                        'PUT {nomeprato}' => 'putprecopornome', // 'putprecopornome' é 'actionPutprecopornome '
+                        'POST vazio' => 'postpratovazio', // 'postpratovazio' é 'actionPostpratovazio
+
+                        ],
+                        'tokens' => [
+                            '{id}' => '<id:\\d+>',
+                            '{nomeprato}' => '<nomeprato:\\w+>', //[a-zA-Z0-9_] 1 ou + vezes (char)
+                            '{ano}' => '<ano:\\d{4}>',
+                            '{mes}' => '<mes:\\d{2}>',
+                            '{dia}' => '<dia:\\d{2}>',
+                        ],
                     ],
                 ],
             ],
         ],
-
-    ],
-    'params' => $params,
-];
+        'params' => $params,
+    ];
